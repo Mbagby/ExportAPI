@@ -1,5 +1,5 @@
 //1. Create a get request
-//Seems simple right...
+//Seems simple...
 
 //Issue 1: Node.js isnt following redirect. (301)
 //Notes: Node.js does NOT automatically follow redirects. Awesome.
@@ -73,7 +73,7 @@ https.get(options, function(res) {
    	   	console.log(cases);
    	   	
    	   }
-    //write cases to a .json file! //now we have an array of objects(cases)
+    //write cases to a .json file //now we have an array of objects(cases)
  	fs.writeFileSync('caseData.json', util.inspect(cases) , 'utf-8', function(err){
    		if(err){
   			console.log(err);
@@ -82,7 +82,7 @@ https.get(options, function(res) {
   		}
    	});
 
-   	//write a json to csv file!
+   	//write a json to csv file
 
 	var fields = ['id', 'subject', 'status', 'desciption'];
 	json2csv({ data: cases, fields: fields }, function(err, csv) {
